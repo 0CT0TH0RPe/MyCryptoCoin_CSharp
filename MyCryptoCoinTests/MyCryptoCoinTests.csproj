@@ -1,0 +1,221 @@
+
+// MyCryptoCoinTests // 
+
+
+/*
+MyCryptoCoin C#  
+
+  - MyCryptoCoinTests/
+    - Core/
+      - Unit/
+        - IBlockTests.cs
+        - ITransactionTests.cs
+        - BlockTests.cs
+        - BlockchainTests.cs
+        - MiningTests.cs
+        - TransactionTests.cs
+        - WalletTests.cs
+        - WalletManagerTests.cs
+      - Integration/
+        - BlockchainControllerTests.cs
+        - TransactionControllerTests.cs
+        - ExceptionHandlerMiddlewareTests.cs
+        - MyCryptoCoinAPIStartupTests.cs
+        - BlockchainProcessorTests.cs
+        - TransactionProcessorTests.cs
+        - MyCryptoCoinWorkerStartupTests.cs
+    - API/
+      - MyCryptoCoinAPITests.cs
+    - Worker/
+      - MyCryptoCoinWorkerTests.cs
+    - ConsoleApp/
+      - MyCryptoCoinConsoleAppTests.cs
+    - WebApp/
+      - MyCryptoCoinWebAppTests.cs
+    - MyCryptoCoinTests.csproj
+*/
+
+
+// Unit Tests//
+// IBlockTests.cs
+using Xunit;
+
+namespace MyCryptoCoinTests.Core.Unit
+{
+    public class IBlockTests
+    {
+        // TODO: Add your test cases here
+
+        [Fact]
+        public void TestExample()
+        {
+            // TODO: Write your test case
+            Assert.True(true);
+        }
+    }
+}
+
+// ITransactionTests.cs
+using Xunit;
+
+namespace MyCryptoCoinTests.Core.Unit
+{
+    public class ITransactionTests
+    {
+        // TODO: Add your test cases here
+
+        [Fact]
+        public void TestExample()
+        {
+            // TODO: Write your test case
+            Assert.True(true);
+        }
+    }
+}
+
+// BlockTests.cs
+public class BlockTests
+{
+    // Implement unit tests for the Block class
+}
+
+// BlockchainTests.cs
+public class BlockchainTests
+{
+    // Implement unit tests for the Blockchain class
+}
+
+// MiningTests.cs
+public class MiningTests
+{
+    // Implement unit tests for the Mining class
+}
+
+// TransactionTests.cs
+public class TransactionTests
+{
+    // Implement unit tests for the Transaction class
+}
+
+// WalletTests.cs
+public class WalletTests
+{
+    // Implement unit tests for the Wallet class
+}
+
+// WalletManagerTests.cs
+public class WalletManagerTests
+{
+    // Implement unit tests for the WalletManager class
+}
+
+
+
+// Integration Tests // 
+// BlockchainControllerTests.cs
+public class BlockchainControllerTests
+{
+    // Implement integration tests for the BlockchainController class
+}
+
+// TransactionControllerTests.cs
+public class TransactionControllerTests
+{
+    // Implement integration tests for the TransactionController class
+}
+
+// ExceptionHandlerMiddlewareTests.cs
+public class ExceptionHandlerMiddlewareTests
+{
+    // Implement integration tests for the ExceptionHandlerMiddleware class
+}
+
+// MyCryptoCoinApiStartupTests.cs
+public class MyCryptoCoinApiStartupTests
+{
+    // Implement integration tests for the MyCryptoCoin.Api.Startup class
+}
+
+// BlockchainProcessorTests.cs
+public class BlockchainProcessorTests
+{
+    // Implement integration tests for the BlockchainProcessor class
+}
+
+// TransactionProcessorTests.cs
+public class TransactionProcessorTests
+{
+    // Implement integration tests for the TransactionProcessor class
+}
+
+// MyCryptoCoinWorkerStartupTests.cs
+public class MyCryptoCoinWorkerStartupTests
+{
+    // Implement integration tests for the MyCryptoCoin.Worker.Startup class
+}
+
+//MyCryptoCoinAPITests.cs
+using Xunit;
+
+namespace MyCryptoCoinTests.API
+{
+    public class MyCryptoCoinAPITests
+    {
+        // TODO: Add your test cases here
+
+        [Fact]
+        public void TestExample()
+        {
+            // TODO: Write your test case
+            Assert.True(true);
+        }
+    }
+}
+
+// MyCryptoCoinWorkerTests.cs
+using Xunit;
+
+namespace MyCryptoCoinTests.Worker
+{
+    public class MyCryptoCoinWorkerTests
+    {
+        // TODO: Add your test cases here
+
+        [Fact]
+        public void TestExample()
+        {
+            // TODO: Write your test case
+            Assert.True(true);
+        }
+    }
+}
+
+// MyCryptoCoinConsoleAppTests.cs
+public class MyCryptoCoinConsoleAppTests
+{
+    // Implement unit tests for the MyCryptoCoin.ConsoleApp.Program class
+}
+
+// MyCryptoCoinWebAppTests.cs
+public class MyCryptoCoinWebAppTests
+{
+    // Implement integration tests for the MyCryptoCoin.WebApp project
+}
+
+// MyCryptoCoinTests.cs
+using Xunit;
+
+namespace MyCryptoCoinTests
+{
+    public class MyCryptoCoinTests
+    {
+        // TODO: Add your test cases here
+
+        [Fact]
+        public void TestExample()
+        {
+            // TODO: Write your test case
+            Assert.True(true);
+        }
+    }
+}

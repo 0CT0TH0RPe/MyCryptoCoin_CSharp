@@ -1,0 +1,197 @@
+MyCryptoCoin.Core.csproj
+
+// MyCryptoCoin.Core.csproj
+namespace MyCryptoCoin
+{
+    public class MyCryptoCoin
+    {
+        private readonly IBlockchainService blockchainService;
+        private readonly ITransactionService transactionService;
+        private readonly IWalletService WalletService;
+
+        public MyCryptoCoinCore(IBlockchainService blockchainService, ITransactionService transactionService, IWalletService walletService)
+        {
+            this.blockchainService = blockchainService;
+            this.transactionService = transactionService;
+            this.walletService = walletService;
+
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            // Perform initialization tasks here
+            ConfigureBlockchain();
+            ConfigureTransactionPool();
+            ConfigureWalletManager();
+            // Other initialization steps...
+
+            // Start mining or other processes
+            StartMining();
+        }
+
+        private void ConfigureBlockchain()
+        {
+            // Configure the blockchain service
+            public class BlockchainService : IBlockchainService
+            {
+                private readonly IBlockRepository blockRepository;
+
+                public BlockchainService(IBlockRepository blockRepository)
+                {
+                    this.blockRepository = blockRepository;
+                }
+                
+                public void ConfigureBlockchain()
+                {
+                    // Set up the initial blockchain state
+                    if (!blockRepository.HasGenesisBlock())
+                    {
+                        CreateGenesisBlock();
+                    }
+                    else
+                    {
+                        // Load persisted data
+                        LoadPersistedBlockchain();
+                    }
+                }
+
+                private void CreateGenesisBlock()
+                {
+                    // Create the genesis block
+                    var genesisBlock = new Block(/* block parameters */);
+
+                    // Persist the genesis block to the repository
+                    blockRepository.AddBlock(genesisBlock);
+                }
+
+                private void LoadPersistedBlockchain()
+                {
+                    // Load the persisted blockchain from the repository
+                    var persistedBlockchain = blockRepository.GetBlockchain();
+
+                    // Perform any additional validation or checks
+
+                    // Set the loaded blockchain as the current blockchain
+                    Blockchain.SetBlockchain(persistedBlockchain);
+                }
+            }
+        }
+
+        private void ConfigureTransactionPool()
+        {
+            // Configure the transaction service and transaction pool
+            public class TransactionService : ITransactionService
+            {
+                private readonly ITransactionPool transactionPool;
+                private readonly ITransactionRepository TransactionRepository;
+
+                public TransactionService(ITransactionPool transactionPool, ITransactionRepository transactionRepository)
+                {
+                    this.transactionPool = transactionPool;
+                    this.tansactionRepository = TransactionRepository;
+                }
+
+                public void ConfigureTransactionPool()
+                {
+                    // Set up the initial transaction pool state, load persisted data, etc.
+                    LoadPersistedTransactions();
+                }
+
+                private void LoadPersistedTransactions()
+                {
+                    // Load the persisted transactions from the repository
+                    var persistedTransactions = transactionRepository.GetPersistedTransactions();
+                    // var LoadPersistedTransactions = TransactionRepository.GetTransactions()
+
+                    // Add the loaded transactions to the transaction pool
+                    foreach (var transaction in persistedTransactions)
+                    // foreach (var TotalTransaction in LoadPersistedTransactions)
+                    {
+                        transactionPool.AddTransaction(transaction);
+                    }
+                }
+                
+            }
+        }
+
+        private void ConfigureWalletManager()
+        {
+            // Configure the wallet service and wallet manager
+            public class WalletService : IWalletService
+            {
+                private readonly IWalletManager WalletManager;
+                private readonly IWalletRepository WalletRepository;
+
+                public WalletService(IWalletManager walletManager, IWalletRepository walletRepository)
+                {
+                    this.walletManager = walletManager;
+                    this.walletRepository = walletRepository;
+                }
+
+                public void ConfigureWalletManager()
+                {
+                    // Set up the initial wallet state
+                    LoadPersisteddWallets();
+                }
+
+                private void LoadPersistedWallets()
+                {
+                    // Load the persisted wallets from the repository
+                    var persistedWallets = walletRepository.GetWallets();
+
+                    // // Add the loaded wallets to the wallet manager
+                    foreach (var wallet in persistedWallets)
+                    {
+                        walletManager.AddWallet(wallet);
+                    }
+                }
+            }
+        }
+
+        private void StartMining()
+        {
+            // Start the mining process
+            // This could involve creating a mining thread, setting up mining parameters, etc.
+            public class Mining : IMining
+            {
+                private readonly IBlockchainService blockchainService;
+                private readonly ITransactionService transactionService;
+
+                public Mining(IBlockchainService blockchainService, ITransactionService transactionService)
+                {
+                    this.blockchainService = blockchainService;
+                    this.transactionService = transactionService;
+                }
+
+                public void Start Mining()
+                {
+                    // Create a mining thread and start it
+                    var miningThread = new Thread(MineBlocks);
+                    miningThread.Start();
+                }
+
+                private void MineBlocks()
+                {
+                    while (true)
+                    {
+                        // // Check if there are pending transactions in the transaction pool
+                        var pendingTransactions = transactionService.GetPendingTransactions();
+
+                        if (pendingTransactions.Any())
+                        {
+                            // Create a new block and include the pending transactions
+                            var newBlock = blockchainService.CreateBlock(pendingTransactions);
+
+                            // Mine the new block
+                            blockchainService.MineBlock(newBlock);
+                    }
+
+                    // Delay between mining attempts
+                    Thread.Sleep(1000);
+                    }
+                } 
+            }
+        }
+    }
+}
